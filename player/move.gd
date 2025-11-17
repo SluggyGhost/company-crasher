@@ -17,3 +17,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.lerp(target_velocity, lerp_weight)
 	
 	move_and_slide()
+
+
+func _on_building_tscn_building_entered(building_size: Variant, building_ref: Variant) -> void:
+	pass # Replace with function body.
