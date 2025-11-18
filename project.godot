@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Company Crasher"
-run/main_scene="uid://dr3huwe88gccc"
+run/main_scene="uid://b2l21ff6cahgx"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

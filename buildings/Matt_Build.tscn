@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://vbd3esl0xh2q"]
+
+[ext_resource type="Script" uid="uid://nx70hhbpedty" path="res://buildings/Building.gd" id="1_1283v"]
+[ext_resource type="Texture2D" uid="uid://c4ipc0laha40j" path="res://Assets/Sprites/Building-Placeholder.jpeg" id="2_f3rmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfo7a"]
+size = Vector2(100, 100)
+
+[node name="MattBuild" type="Area2D"]
+script = ExtResource("1_1283v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -4.000002)
+scale = Vector2(0.4340425, 0.45794395)
+texture = ExtResource("2_f3rmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bfo7a")

@@ -1,17 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjv8hurvhrndb"]
 
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="1_t7iv1"]
-[ext_resource type="Script" uid="uid://rm25wjaqqdbh" path="res://level.gd" id="1_wkftn"]
+[ext_resource type="Script" uid="uid://rm25wjaqqdbh" path="res://levels/Level.gd" id="1_wkftn"]
 [ext_resource type="PackedScene" uid="uid://fxdcw37mf0a6" path="res://buildings/Building.tscn" id="2_2nifc"]
 [ext_resource type="Script" uid="uid://b6qxruqhe8ks5" path="res://player/player.gd" id="3_q4iis"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(1261, 2605)
 script = ExtResource("1_wkftn")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5, 6)
-zoom = Vector2(0.42, 0.42)
 
 [node name="Player" parent="." instance=ExtResource("1_t7iv1")]
 scale = Vector2(0.15, 0.15)
@@ -39,10 +35,10 @@ position = Vector2(1258, 2797)
 position = Vector2(2098, 909)
 
 [node name="Sprite2D" parent="BuildingSm" index="0"]
-position = Vector2(1487, 2581)
+position = Vector2(1527, 2593)
 
 [node name="CollisionShape2D" parent="BuildingSm" index="1"]
-position = Vector2(1497, 2576)
+position = Vector2(1533, 2593)
 
 [editable path="BuildingMd"]
 [editable path="BuildingLg"]
