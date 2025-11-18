@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
 [ext_resource type="PackedScene" uid="uid://vbd3esl0xh2q" path="res://buildings/Matt_Build.tscn" id="3_4ikc1"]
 [ext_resource type="PackedScene" uid="uid://cug5l51y8n3d" path="res://enemies/Enemy.tscn" id="4_kotdi"]
-[ext_resource type="Script" uid="uid://2brcfarl1fio" path="res://enemies/enemy.gd" id="5_i3iap"]
+[ext_resource type="Script" uid="uid://2brcfarl1fio" path="res://enemies/Enemy.gd" id="5_kotdi"]
 
 [node name="City" type="Node2D"]
 
@@ -23,4 +23,4 @@ position = Vector2(-559, -104)
 position = Vector2(-669, 151)
 
 [node name="Enemy" parent="." instance=ExtResource("4_kotdi")]
-script = ExtResource("5_i3iap")
+script = ExtResource("5_kotdi")
