@@ -1,9 +1,15 @@
-
 extends CharacterBody2D
 
 const MAX_SPEED := 500.0
 const FRICTION := 8.0
 const ACCELERATION := 5.0
+
+var player_size: int = 2   # starting size
+
+func grow_player(amount: int):
+	player_size += amount
+	scale += Vector2(0.05, 0.05) * amount
+	print("Player grew! New size:", player_size)
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2(
@@ -12,12 +18,7 @@ func _physics_process(delta: float) -> void:
 	).normalized()
 
 	var target_velocity = input_dir * MAX_SPEED
-
 	var lerp_weight = delta * (ACCELERATION if input_dir != Vector2.ZERO else FRICTION)
+
 	velocity = velocity.lerp(target_velocity, lerp_weight)
-	
 	move_and_slide()
-
-
-func _on_building_tscn_building_entered(building_size: Variant, building_ref: Variant) -> void:
-	pass # Replace with function body.

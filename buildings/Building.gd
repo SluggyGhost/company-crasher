@@ -1,13 +1,20 @@
-extends Area2D   # Use Area2D so it can detect player collisions
+extends Node2D
 
-@export var building_size: int = 1  # 1=small, 2=medium, 3=large
+@export var building_size_required: int = 20
+@export var reward: int = 5
 
-signal building_entered(building_size, building_ref)
+signal building_destroyed(building_ref)
+signal building_blocked(building_ref)
+
+func _ready():
+	$Area2D.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		emit_signal("building_entered", building_size, self)
-
-
-func _on_building_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+		if body.player_size >= building_size_required:
+			emit_signal("building_destroyed", self)
+			body.grow_player(reward)
+			queue_free()   # remove the building
+		else:
+			emit_signal("building_blocked", self)
+			# too small → do nothing (player blocked by StaticBody2D)

@@ -1,24 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2l21ff6cahgx"]
+[gd_scene load_steps=5 format=3 uid="uid://b2l21ff6cahgx"]
 
-[ext_resource type="Texture2D" uid="uid://bdg772fbabr6u" path="res://Assets/Sprites/Termination_Letter.png" id="1_kuu6s"]
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
-[ext_resource type="PackedScene" uid="uid://vbd3esl0xh2q" path="res://buildings/Matt_Build.tscn" id="3_4ikc1"]
+[ext_resource type="PackedScene" uid="uid://vbd3esl0xh2q" path="res://buildings/BuildLg.tscn" id="3_4ikc1"]
+[ext_resource type="PackedScene" uid="uid://5mhd3d0ldafm" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
+[ext_resource type="PackedScene" uid="uid://es7gvrava40k" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
 
 [node name="City" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(35, -98)
-scale = Vector2(1.4797639, 1.2464052)
-texture = ExtResource("1_kuu6s")
-
 [node name="Player" parent="." instance=ExtResource("2_4ikc1")]
-position = Vector2(-9, -2)
 
-[node name="MattBuild" parent="." instance=ExtResource("3_4ikc1")]
-position = Vector2(-559, -104)
+[node name="BuildSm" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-930, 1436)
 
-[node name="MattBuild2" parent="." instance=ExtResource("3_4ikc1")]
-position = Vector2(-669, 151)
+[node name="BuildSm2" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(273, 550)
 
-[node name="MattBuild3" parent="." instance=ExtResource("3_4ikc1")]
-position = Vector2(-531, 434)
+[node name="BuildSm3" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-1137, 795)
+
+[node name="BuildSm4" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-1354, -170)
+
+[node name="BuildSm5" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(620, -169)
+
+[node name="BuildSm6" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(615, 100)
+
+[node name="BuildSm7" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-286, 508)
+
+[node name="BuildSm8" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-655, 665)
+
+[node name="BuildSm9" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-697, 220)
+
+[node name="BuildSm10" parent="." instance=ExtResource("5_kotdi")]
+position = Vector2(-155, -419)
+
+[node name="BuildMd" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-724, -615)
+
+[node name="BuildMd2" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-160, -978)
+
+[node name="BuildMd3" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(1086, -885)
+
+[node name="BuildMd4" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-250, 992)
+
+[node name="BuildMd5" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1773, 663)
+
+[node name="BuildMd6" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1303, -711)
+
+[node name="BuildMd7" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1876, -67)
+
+[node name="BuildMd8" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(1471, -204)
+
+[node name="BuildLg" parent="." instance=ExtResource("3_4ikc1")]
+position = Vector2(619, 1222)
