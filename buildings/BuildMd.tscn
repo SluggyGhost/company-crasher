@@ -11,8 +11,6 @@ size = Vector2(509, 345.5)
 
 [node name="BuildMd" type="Node2D"]
 script = ExtResource("1_ldm6f")
-building_size_required = 10
-reward = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-90.7336, 110.02402)

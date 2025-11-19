@@ -1,16 +1,31 @@
 extends Node2D
 
-@export var building_size_required: int = 1
-@export var reward: int = 1
+@export var reward: int = 3  # how much the player grows when this building is destroyed
 
-func _ready():
+func _ready() -> void:
 	$Area2D.body_entered.connect(_on_body_entered)
 
-func _on_body_entered(body):
-	if body.is_in_group("player"):
-		if body.player_size >= building_size_required:
-			print("Building destroyed!")
+func get_pixel_size() -> Vector2:
+	if $Sprite2D.texture == null:
+		return Vector2.ZERO
+	return $Sprite2D.texture.get_size() * $Sprite2D.global_scale
+
+func _on_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("player"):
+		return
+
+	if not body.has_method("get_pixel_size"):
+		return
+
+	var player_pixel_len: float = body.get_pixel_size().length()
+	var building_pixel_len: float = get_pixel_size().length()
+
+	print("Collision: player_px =", player_pixel_len, " building_px =", building_pixel_len)
+
+	if player_pixel_len > building_pixel_len:
+		print("Player is bigger → destroying building")
+		if body.has_method("grow_player"):
 			body.grow_player(reward)
-			queue_free()
-		else:
-			print("Player is too small to destroy this building.")
+		queue_free()
+	else:
+		print("Player too small → cannot destroy this building yet")

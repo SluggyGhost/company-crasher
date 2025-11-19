@@ -25,19 +25,19 @@ position = Vector2(-1354, -170)
 position = Vector2(620, -169)
 
 [node name="BuildSm6" parent="." instance=ExtResource("5_kotdi")]
-position = Vector2(615, 100)
+position = Vector2(809, 819)
 
 [node name="BuildSm7" parent="." instance=ExtResource("5_kotdi")]
-position = Vector2(-286, 508)
+position = Vector2(-255, 1213)
 
 [node name="BuildSm8" parent="." instance=ExtResource("5_kotdi")]
-position = Vector2(-655, 665)
+position = Vector2(-652, 862)
 
 [node name="BuildSm9" parent="." instance=ExtResource("5_kotdi")]
 position = Vector2(-697, 220)
 
 [node name="BuildSm10" parent="." instance=ExtResource("5_kotdi")]
-position = Vector2(-155, -419)
+position = Vector2(374, -865)
 
 [node name="BuildMd" parent="." instance=ExtResource("4_7re5v")]
 position = Vector2(-724, -615)
@@ -49,7 +49,7 @@ position = Vector2(-160, -978)
 position = Vector2(1086, -885)
 
 [node name="BuildMd4" parent="." instance=ExtResource("4_7re5v")]
-position = Vector2(-250, 992)
+position = Vector2(-215, 1583)
 
 [node name="BuildMd5" parent="." instance=ExtResource("4_7re5v")]
 position = Vector2(-1773, 663)
@@ -64,4 +64,4 @@ position = Vector2(-1876, -67)
 position = Vector2(1471, -204)
 
 [node name="BuildLg" parent="." instance=ExtResource("3_4ikc1")]
-position = Vector2(619, 1222)
+position = Vector2(965, 1865)
