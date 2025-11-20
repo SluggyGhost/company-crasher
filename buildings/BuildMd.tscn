@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://5mhd3d0ldafm"]
+
+[ext_resource type="Script" uid="uid://ccxlcpt66mgje" path="res://buildings/build_md.gd" id="1_ldm6f"]
+[ext_resource type="Texture2D" uid="uid://c4ipc0laha40j" path="res://Assets/Sprites/Building-Placeholder.jpeg" id="1_w2fma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h63np"]
+size = Vector2(511, 347.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2fma"]
+size = Vector2(509, 345.5)
+
+[node name="BuildMd" type="Node2D"]
+script = ExtResource("1_ldm6f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-90.7336, 110.02402)
+scale = Vector2(2.1679454, 1.6165979)
+texture = ExtResource("1_w2fma")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-90.5, 110.25)
+shape = SubResource("RectangleShape2D_h63np")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-90.5, 110.25)
+shape = SubResource("RectangleShape2D_w2fma")
