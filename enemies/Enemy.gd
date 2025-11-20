@@ -7,6 +7,7 @@ var player: CharacterBody2D = null;
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player");
+	$Area2D.body_entered.connect(_on_body_entered)
 
 	if not player:
 		print("Enemy Error: Player node not found in group 'player'!");
@@ -23,4 +24,4 @@ func _physics_process(delta: float):
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		body.shrink(damage);
+		body.grow_player(-damage);
