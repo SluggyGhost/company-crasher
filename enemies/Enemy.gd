@@ -1,9 +1,17 @@
-extends CharacterBody2D
+extends CharacterBody2D;
 
 @export var damage = 1;
 @export var speed: float = 100.0;
 
 var player: CharacterBody2D = null;
+
+func _ready():
+	player = get_tree().get_first_node_in_group("player");
+
+	if not player:
+		print("Enemy Error: Player node not found in group 'player'!");
+		set_process(false);
+		return;
 
 func _physics_process(delta: float):
 	if player:

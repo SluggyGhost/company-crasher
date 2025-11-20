@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2l21ff6cahgx"]
+[gd_scene load_steps=5 format=3 uid="uid://b2l21ff6cahgx"]
 
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
+[ext_resource type="PackedScene" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
 [ext_resource type="PackedScene" uid="uid://cug5l51y8n3d" path="res://enemies/Enemy.tscn" id="4_kotdi"]
-[ext_resource type="Script" uid="uid://2brcfarl1fio" path="res://enemies/Enemy.gd" id="5_kotdi"]
-[ext_resource type="PackedScene" uid="uid://vbd3esl0xh2q" path="res://buildings/BuildLg.tscn" id="3_4ikc1"]
-[ext_resource type="PackedScene" uid="uid://5mhd3d0ldafm" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
-[ext_resource type="PackedScene" uid="uid://es7gvrava40k" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
+[ext_resource type="PackedScene" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
 
 [node name="City" type="Node2D"]
 
@@ -66,7 +64,3 @@ position = Vector2(-1876, -67)
 position = Vector2(1471, -204)
 
 [node name="Enemy" parent="." instance=ExtResource("4_kotdi")]
-script = ExtResource("5_kotdi")
-
-[node name="BuildLg" parent="." instance=ExtResource("3_4ikc1")]
-position = Vector2(965, 1865)
