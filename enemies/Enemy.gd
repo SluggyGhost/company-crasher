@@ -25,3 +25,4 @@ func _physics_process(delta: float):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.grow_player(-damage);
+		queue_free();
