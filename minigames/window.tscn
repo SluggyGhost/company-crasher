@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ab3s83jmjbx"]
+
+[ext_resource type="Script" uid="uid://bc7is7g50fph6" path="res://minigames/window.gd" id="1_gu3qm"]
+[ext_resource type="Texture2D" uid="uid://c5ojc0wjetdlv" path="res://Assets/Sprites/window.png" id="1_xus63"]
+[ext_resource type="Texture2D" uid="uid://bfvbfre6gevvk" path="res://Assets/Sprites/broken_glass.png" id="2_gu3qm"]
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gu3qm")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(65, 53)
+scale = Vector2(0.10046295, 0.10046295)
+texture = ExtResource("1_xus63")
+
+[node name="Cracked Glass" type="Sprite2D" parent="."]
+position = Vector2(65, 53)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gu3qm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
