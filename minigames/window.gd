@@ -8,3 +8,11 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	window_crack.visible = true
+	var choice = randi() % 3
+	if (choice == 0):
+		$Glass1SFX.play()
+	else:
+		if (choice == 1):
+			$Glass2SFX.play()
+		else:
+			$Glass3SFX.play()
