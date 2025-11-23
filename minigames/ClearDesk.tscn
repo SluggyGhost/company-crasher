@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbuhihxg2okjq"]
+
+[ext_resource type="Texture2D" uid="uid://di80r8ox6vn1l" path="res://Assets/Sprites/desk.png" id="1_1scki"]
+[ext_resource type="PackedScene" uid="uid://dest3clblujup" path="res://minigames/coffee_mug.tscn" id="2_44w81"]
+[ext_resource type="Script" uid="uid://ywy3mlkn4p82" path="res://minigames/drop_zone.gd" id="3_yj2ug"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44w81"]
+texture = ExtResource("1_1scki")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iilkp"]
+
+[node name="ClearDesk" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_44w81")
+
+[node name="CoffeeMug" parent="." instance=ExtResource("2_44w81")]
+position = Vector2(113, 225)
+
+[node name="DropZone" type="Area2D" parent="."]
+script = ExtResource("3_yj2ug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZone"]
+shape = SubResource("RectangleShape2D_iilkp")
