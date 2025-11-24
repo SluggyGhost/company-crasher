@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2l21ff6cahgx"]
+[gd_scene load_steps=6 format=3 uid="uid://b2l21ff6cahgx"]
 
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
-[ext_resource type="PackedScene" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
+[ext_resource type="PackedScene" uid="uid://5mhd3d0ldafm" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
 [ext_resource type="PackedScene" uid="uid://cug5l51y8n3d" path="res://enemies/Enemy.tscn" id="4_kotdi"]
-[ext_resource type="PackedScene" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
+[ext_resource type="PackedScene" uid="uid://klgk4l20ct1x" path="res://powerups/Powerup.tscn" id="5_i3iap"]
+[ext_resource type="PackedScene" uid="uid://es7gvrava40k" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
 
 [node name="City" type="Node2D"]
 
@@ -86,3 +87,6 @@ position = Vector2(-729, -1687)
 
 [node name="Enemy8" parent="." instance=ExtResource("4_kotdi")]
 position = Vector2(727, 2057)
+
+[node name="Powerup" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(-822, -26)

@@ -1,3 +1,5 @@
+#These are people
+
 extends Node2D
 
 @export var building_size_required: int = 20
