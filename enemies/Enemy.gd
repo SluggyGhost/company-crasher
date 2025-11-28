@@ -1,6 +1,6 @@
 extends CharacterBody2D;
 ;
-@export var damage = 1;
+@export var damage = 2;
 @export var speed: float = 100.0;
 var spawnPos: Vector2;
 
