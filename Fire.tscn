@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://o3ahbdsbxp7b"]
+
+[ext_resource type="Script" uid="uid://b8ceqgyvevgvb" path="res://fire.gd" id="1_a1sx3"]
+
+[sub_resource type="Curve" id="Curve_m8aqp"]
+_data = [Vector2(0, 1), 0.0, 0.22807322, 0, 0, Vector2(0.9929578, 0.3646533), -2.599146, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_a1sx3"]
+offsets = PackedFloat32Array(0, 0.17777778, 0.39444444, 0.5611111, 0.89444447)
+colors = PackedColorArray(1.353256, 0, 0.2801495, 1, 1.353256, 0.5418828, 0.2801495, 1, 1.353256, 1.0653495, 0.8036162, 1, 3.0218387, 3.0218387, 3.8125224, 0.23137255, 0.101559795, 0.101559795, 0.16816327, 0.75686276)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_a1sx3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 128
+lifetime = 4.0
+speed_scale = 3.0
+explosiveness = 0.1
+randomness = 0.5
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 24.0
+direction = Vector2(0, 1)
+spread = 90.0
+gravity = Vector2(0, -60)
+initial_velocity_max = 20.0
+radial_accel_min = 5.0
+radial_accel_max = 15.0
+angle_min = -15.0
+angle_max = 15.0
+scale_amount_curve = SubResource("Curve_m8aqp")
+color_ramp = SubResource("Gradient_a1sx3")

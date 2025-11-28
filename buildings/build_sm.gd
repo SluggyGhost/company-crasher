@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var reward: int = 5  # how much the player grows when this building is destroyed
+var particleScene = preload("res://Fire.tscn");
 
 func _ready() -> void:
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -26,6 +27,11 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Player is bigger → destroying building")
 		if body.has_method("grow_player"):
 			body.grow_player(reward)
+		
+		# Fire effect on destruction
+		var effectInstance = particleScene.instantiate();
+		get_tree().current_scene.add_child(effectInstance);
+		effectInstance.global_position = $Area2D.global_position;
 		queue_free()
 	else:
 		print("Player too small → cannot destroy this building yet")
