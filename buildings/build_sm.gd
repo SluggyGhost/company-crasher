@@ -30,11 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.grow_player(reward)
 		
 		# SFX
-		var audio = AudioStreamPlayer2D.new();
-		audio.stream = sfx;
-
-		get_tree().current_scene.add_child(audio);
-		audio.play();
+		SoundManager.playSFX2D(sfx, 0.2);
 		
 		# Fire effect on destruction
 		var effectInstance = particleScene.instantiate();
