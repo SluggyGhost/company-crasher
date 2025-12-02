@@ -1,5 +1,5 @@
 extends CharacterBody2D;
-;
+
 @export var damage = 2;
 @export var speed: float = 100.0;
 var spawnPos: Vector2;
@@ -28,3 +28,4 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.grow_player(-damage);
 		global_position = spawnPos;
+		$ouch.play()
