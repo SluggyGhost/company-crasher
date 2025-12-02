@@ -2,6 +2,7 @@ extends Node2D
 
 @export var reward: int = 3  # how much the player grows when this building is destroyed
 var particleScene = preload("res://Fire.tscn");
+var sfx = preload("res://Assets/Sound/demolitionExplosionMedium.mp3");
 
 func _ready() -> void:
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -27,6 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Player is bigger → destroying building")
 		if body.has_method("grow_player"):
 			body.grow_player(reward)
+		
+		# SFX
+		SoundManager.playSFX2D(sfx, 0.05);
 		
 		# Fire effect on destruction
 		var effectInstance = particleScene.instantiate();

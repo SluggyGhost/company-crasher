@@ -30,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.grow_player(reward)
 		
 		# SFX
-		SoundManager.playSFX2D(sfx, 0.2);
+		SoundManager.playSFX2D(sfx, 0.05);
 		
 		# Fire effect on destruction
 		var effectInstance = particleScene.instantiate();
