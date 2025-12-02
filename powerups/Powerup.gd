@@ -2,7 +2,7 @@ extends Area2D
 
 # --- Configurable properties ---
 @export var speed_multiplier: float = 2.0      # How much to multiply player speed
-@export var duration: float = 10.0            # Duration of the effect in seconds
+@export var duration: float = 5.0            # Duration of the effect in seconds
 
 func _ready() -> void:
 	# Connect the body entered signal to detect player collisions

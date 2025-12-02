@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cug5l51y8n3d"]
+[gd_scene load_steps=6 format=3 uid="uid://cug5l51y8n3d"]
 
 [ext_resource type="Script" uid="uid://2brcfarl1fio" path="res://enemies/Enemy.gd" id="1_43lb5"]
 [ext_resource type="Texture2D" uid="uid://dph66khko8qcx" path="res://Assets/Sprites/corpoThug.png" id="1_xkw1x"]
+[ext_resource type="AudioStream" uid="uid://bv2jcq8k75i7x" path="res://Assets/Sounds/ow.mp3" id="3_8tr1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkw1x"]
 size = Vector2(139, 131)
@@ -25,3 +26,6 @@ shape = SubResource("RectangleShape2D_xkw1x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_43lb5")
+
+[node name="ouch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8tr1a")
