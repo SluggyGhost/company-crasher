@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://df0kbinkwuia7"]
+
+[ext_resource type="Texture2D" uid="uid://bdg772fbabr6u" path="res://Assets/Sprites/Termination_Letter.png" id="1_oyqm6"]
+[ext_resource type="Script" uid="uid://upp5j6a28vq5" path="res://button.gd" id="2_kpexm"]
+
+[node name="Title" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_oyqm6")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -89.0
+offset_top = 507.0
+offset_right = 86.0
+offset_bottom = 565.0
+button_mask = 5
+text = "Its Destructo Time!"
+script = ExtResource("2_kpexm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

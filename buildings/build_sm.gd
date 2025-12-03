@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var reward: int = 5  # how much the player grows when this building is destroyed
+@export var reward: int = 2  # how much the player grows when this building is destroyed
 var particleScene = preload("res://Fire.tscn");
 var sfx = preload("res://Assets/Sound/demolitionExplosionSmall.mp3");
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2l21ff6cahgx"]
+[gd_scene load_steps=7 format=3 uid="uid://b2l21ff6cahgx"]
 
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
 [ext_resource type="PackedScene" uid="uid://5mhd3d0ldafm" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
 [ext_resource type="PackedScene" uid="uid://cug5l51y8n3d" path="res://enemies/Enemy.tscn" id="4_kotdi"]
 [ext_resource type="PackedScene" uid="uid://klgk4l20ct1x" path="res://powerups/Powerup.tscn" id="5_i3iap"]
 [ext_resource type="PackedScene" uid="uid://es7gvrava40k" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
+[ext_resource type="AudioStream" uid="uid://bv2jcq8k75i7x" path="res://Assets/Sounds/ow.mp3" id="6_i3iap"]
 
 [node name="City" type="Node2D"]
 
@@ -58,6 +59,30 @@ position = Vector2(-1773, 663)
 [node name="BuildMd6" parent="." instance=ExtResource("4_7re5v")]
 position = Vector2(-1303, -711)
 
+[node name="BuildMd9" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-2230, -1578)
+
+[node name="BuildMd15" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1478, -2237)
+
+[node name="BuildMd16" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-454, -2552)
+
+[node name="BuildMd10" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-2710, -770)
+
+[node name="BuildMd11" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-2872, 378)
+
+[node name="BuildMd12" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-2001, 1793)
+
+[node name="BuildMd13" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1355, 2669)
+
+[node name="BuildMd14" parent="." instance=ExtResource("4_7re5v")]
+position = Vector2(-1074, 1951)
+
 [node name="BuildMd7" parent="." instance=ExtResource("4_7re5v")]
 position = Vector2(-1876, -67)
 
@@ -90,3 +115,22 @@ position = Vector2(727, 2057)
 
 [node name="Powerup" parent="." instance=ExtResource("5_i3iap")]
 position = Vector2(-822, -26)
+
+[node name="Powerup2" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(-251, 731)
+
+[node name="Powerup3" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(555, 1370)
+
+[node name="Powerup4" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(883, -348)
+
+[node name="Powerup5" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(-831, -1008)
+
+[node name="Powerup6" parent="." instance=ExtResource("5_i3iap")]
+position = Vector2(-1880, 427)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_i3iap")
+parameters/looping = true
