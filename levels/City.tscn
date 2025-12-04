@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2l21ff6cahgx"]
+[gd_scene load_steps=8 format=3 uid="uid://b2l21ff6cahgx"]
 
 [ext_resource type="PackedScene" uid="uid://dr3huwe88gccc" path="res://player/player.tscn" id="2_4ikc1"]
 [ext_resource type="PackedScene" uid="uid://5mhd3d0ldafm" path="res://buildings/BuildMd.tscn" id="4_7re5v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://klgk4l20ct1x" path="res://powerups/Powerup.tscn" id="5_i3iap"]
 [ext_resource type="PackedScene" uid="uid://es7gvrava40k" path="res://buildings/BuildSm.tscn" id="5_kotdi"]
 [ext_resource type="AudioStream" uid="uid://bv2jcq8k75i7x" path="res://Assets/Sounds/ow.mp3" id="6_i3iap"]
+[ext_resource type="PackedScene" uid="uid://13w0lgu0c3e" path="res://buildings/BuildMega.tscn" id="7_aw0ow"]
 
 [node name="City" type="Node2D"]
 
@@ -130,6 +131,9 @@ position = Vector2(-831, -1008)
 
 [node name="Powerup6" parent="." instance=ExtResource("5_i3iap")]
 position = Vector2(-1880, 427)
+
+[node name="BuildMega" parent="." instance=ExtResource("7_aw0ow")]
+position = Vector2(302, -1623)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_i3iap")

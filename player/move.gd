@@ -38,8 +38,10 @@ func grow_player(amount: int) -> void:
 	player_size += amount
 
 	scale += Vector2(0.05 * amount, 0.05 * amount)
-	scale.x = clamp(scale.x, 0.3, 5.0)
-	scale.y = clamp(scale.y, 0.3, 5.0)
+	scale.x = clamp(scale.x, 0.3, 500.0)
+	scale.y = clamp(scale.y, 0.3, 500.0)
+	
+	max_speed += 50;
 
 	print("Player size:", player_size, " scale:", scale)
 
@@ -60,14 +62,14 @@ func _update_camera_zoom() -> void:
 
 # --- Power-up methods ---
 func apply_speed_boost(multiplier: float, duration: float) -> void:
-	max_speed = MAX_SPEED_DEFAULT * multiplier
+	max_speed = max_speed * multiplier
 	# Restart timer
 	speed_boost_timer.start(duration)
 	print("Speed boost applied! New speed:", max_speed, " for", duration, "seconds")
 
 
 func _on_speed_boost_timeout() -> void:
-	max_speed = MAX_SPEED_DEFAULT
+	max_speed = max_speed /2
 	print("Speed boost ended. Speed reset to:", max_speed)
 
 
