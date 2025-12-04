@@ -12,12 +12,11 @@ const ZOOM_MAX_OUT: float = 0.1
 # Player size "score"
 var player_size: int = 2
 
-# --- Current movement speed (can be boosted temporarily) ---
+# --- Current movement speed ---
 var max_speed: float = MAX_SPEED_DEFAULT
 
 # Timer for power-up
 var speed_boost_timer: Timer
-
 
 func _ready() -> void:
 	# Camera setup
@@ -26,27 +25,45 @@ func _ready() -> void:
 	else:
 		_update_camera_zoom()
 
-	# Create a Timer node to handle speed boosts
+	# Create timer
 	speed_boost_timer = Timer.new()
 	speed_boost_timer.one_shot = true
 	speed_boost_timer.timeout.connect(_on_speed_boost_timeout)
 	add_child(speed_boost_timer)
 
-
-# --- Growth / Shrink ---
+# --- Growth ---
 func grow_player(amount: int) -> void:
 	player_size += amount
 
 	scale += Vector2(0.05 * amount, 0.05 * amount)
 	scale.x = clamp(scale.x, 0.3, 500.0)
 	scale.y = clamp(scale.y, 0.3, 500.0)
-	
-	max_speed += 50;
+
+	max_speed += 50
 
 	print("Player size:", player_size, " scale:", scale)
 
 	_update_camera_zoom()
 
+	# Notify GameManager for loss condition check
+	var gm = get_tree().current_scene.get_node("GameManager")
+	gm.check_loss_condition(get_pixel_size().length())
+
+# --- OPTIONAL shrink support (used by enemies) ---
+func shrink_player(amount: int) -> void:
+	player_size -= amount
+
+	scale -= Vector2(0.05 * amount, 0.05 * amount)
+	scale.x = clamp(scale.x, 0.3, 500.0)
+	scale.y = clamp(scale.y, 0.3, 500.0)
+
+	print("Player shrunk:", player_size, " scale:", scale)
+
+	_update_camera_zoom()
+
+	# Notify GameManager for loss condition check
+	var gm = get_tree().current_scene.get_node("GameManager")
+	gm.check_loss_condition(get_pixel_size().length())
 
 # --- CAMERA ZOOM ---
 func _update_camera_zoom() -> void:
@@ -59,19 +76,15 @@ func _update_camera_zoom() -> void:
 	var zoom_value: float = lerp(ZOOM_MAX_IN, ZOOM_MAX_OUT, t)
 	cam.zoom = Vector2(zoom_value, zoom_value)
 
-
 # --- Power-up methods ---
 func apply_speed_boost(multiplier: float, duration: float) -> void:
-	max_speed = max_speed * multiplier
-	# Restart timer
+	max_speed *= multiplier
 	speed_boost_timer.start(duration)
 	print("Speed boost applied! New speed:", max_speed, " for", duration, "seconds")
 
-
 func _on_speed_boost_timeout() -> void:
-	max_speed = max_speed /2
+	max_speed /= 2
 	print("Speed boost ended. Speed reset to:", max_speed)
-
 
 # --- Pixel Size Helper ---
 func get_pixel_size() -> Vector2:
@@ -83,7 +96,6 @@ func get_pixel_size() -> Vector2:
 	var global_scale: Vector2 = $Sprite2D.global_scale
 
 	return tex_size * global_scale
-
 
 # --- Movement ---
 func _physics_process(delta: float) -> void:

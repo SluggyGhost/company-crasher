@@ -2,7 +2,7 @@ extends Node2D
 
 @export var reward: int = 10  # how much the player grows when this building is destroyed
 var particleScene = preload("res://Fire.tscn");
-var sfx = preload("res://Assets/Sound/demolitionExplosionMedium.mp3");
+var sfx = preload("res://Assets/Sound/demolitionExplosionLarge.mp3");
 
 func _ready() -> void:
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -37,6 +37,10 @@ func _on_body_entered(body: Node2D) -> void:
 		effectInstance.scaleMin = 24;
 		get_tree().current_scene.add_child(effectInstance);
 		effectInstance.global_position = $Area2D.global_position;
+		get_tree().current_scene.get_node("GameManager").register_destroyed_building()
+		
+
+
 		queue_free()
 	else:
 		print("Player too small → cannot destroy this building yet")

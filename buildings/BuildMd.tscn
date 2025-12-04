@@ -9,7 +9,7 @@ size = Vector2(511, 347.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2fma"]
 size = Vector2(509, 345.5)
 
-[node name="BuildMd" type="Node2D"]
+[node name="BuildMd" type="Node2D" groups=["buildings"]]
 script = ExtResource("1_ldm6f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

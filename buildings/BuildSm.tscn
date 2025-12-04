@@ -10,7 +10,7 @@ size = Vector2(92.25, 105)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff35p"]
 size = Vector2(89, 103)
 
-[node name="BuildSm" type="Node2D"]
+[node name="BuildSm" type="Node2D" groups=["buildings"]]
 script = ExtResource("1_xljge")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

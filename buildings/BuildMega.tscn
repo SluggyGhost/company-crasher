@@ -9,7 +9,7 @@ size = Vector2(1590, 1039)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2fma"]
 size = Vector2(1596, 1024)
 
-[node name="BuildMega" type="Node2D"]
+[node name="BuildMega" type="Node2D" groups=["buildings"]]
 script = ExtResource("1_o8t17")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

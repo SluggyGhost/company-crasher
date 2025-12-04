@@ -1,11 +1,12 @@
 extends Node2D
 
-@export var reward: int = 5  # how much the player grows when this building is destroyed
-var particleScene = preload("res://Fire.tscn");
-var sfx = preload("res://Assets/Sound/demolitionExplosionMedium.mp3");
+@export var reward: int = 5
+var particleScene = preload("res://Fire.tscn")
+var sfx = preload("res://Assets/Sound/demolitionExplosionMedium.mp3")
 
 func _ready() -> void:
 	$Area2D.body_entered.connect(_on_body_entered)
+	add_to_group("building") # Optional but recommended
 
 func get_pixel_size() -> Vector2:
 	if $Sprite2D.texture == null:
@@ -26,17 +27,23 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if player_pixel_len > building_pixel_len:
 		print("Player is bigger → destroying building")
+
 		if body.has_method("grow_player"):
 			body.grow_player(reward)
-		
-		# SFX
-		SoundManager.playSFX2D(sfx, 0.05);
-		
-		# Fire effect on destruction
-		var effectInstance = particleScene.instantiate();
-		effectInstance.scaleMin = 24;
-		get_tree().current_scene.add_child(effectInstance);
-		effectInstance.global_position = $Area2D.global_position;
+
+		# Sound
+		SoundManager.playSFX2D(sfx, 0.05)
+
+		# Effect
+		var effectInstance = particleScene.instantiate()
+		effectInstance.scaleMin = 24
+		get_tree().current_scene.add_child(effectInstance)
+		effectInstance.global_position = $Area2D.global_position
+
+		# Notify GameManager
+		get_tree().current_scene.get_node("GameManager").register_destroyed_building()
+
 		queue_free()
 	else:
 		print("Player too small → cannot destroy this building yet")
+		# 🚫 Do NOT trigger loss here — handled globally

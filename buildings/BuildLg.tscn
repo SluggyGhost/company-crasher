@@ -9,7 +9,7 @@ size = Vector2(1257, 724)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1byql"]
 size = Vector2(1244.5, 716.5)
 
-[node name="BuildLg" type="Node2D"]
+[node name="BuildLg" type="Node2D" groups=["buildings"]]
 script = ExtResource("1_1byql")
 building_size_required = 30
 reward = 5
